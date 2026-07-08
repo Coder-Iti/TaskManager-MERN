@@ -1,0 +1,82 @@
+import React, { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import API from "../api";
+import "./Auth.css";
+
+function Login() {
+  const navigate = useNavigate();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await API.post("/auth/login", {
+        email,
+        password,
+      });
+
+      localStorage.setItem("token", res.data.token);
+      localStorage.setItem("userName", res.data.user.name);
+
+      // Save user details
+      localStorage.setItem("userName", res.data.user.name);
+      console.log(res.data);
+      localStorage.setItem("userEmail", res.data.user.email);
+
+      alert("Login Successful!");
+
+      navigate("/dashboard");
+    } catch (error) {
+      alert(error.response?.data?.message || "Login Failed");
+    }
+  };
+
+  return (
+    <div className="auth-container">
+      <div className="auth-card">
+
+        <h1>📋 Task Manager</h1>
+
+        <h2>Login</h2>
+
+        <form onSubmit={handleLogin}>
+
+          <input
+            type="email"
+            placeholder="Enter Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+
+          <input
+            type="password"
+            placeholder="Enter Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+
+          <button type="submit">
+            Login
+          </button>
+
+        </form>
+
+        <p>
+          Don't have an account?
+          {" "}
+          <Link to="/">
+            Register Here
+          </Link>
+        </p>
+
+      </div>
+    </div>
+  );
+}
+
+export default Login;
