@@ -27,7 +27,7 @@ function Dashboard() {
   setLoading(true);
 
   try {
-    const res = await axios.get("http://localhost:5000/api/tasks", {
+    const res = await axios.get("https://taskmanager-mern-l1fn.onrender.com/api/tasks", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -50,7 +50,7 @@ function Dashboard() {
     try {
       if (editId) {
         await axios.put(
-  `http://localhost:5000/api/tasks/${editId}`,
+  `https://taskmanager-mern-l1fn.onrender.com/api/tasks/${editId}`,
   {
     title,
     priority,
@@ -64,7 +64,7 @@ function Dashboard() {
         );
       } else {
        await axios.post(
-  "http://localhost:5000/api/tasks",
+  "https://taskmanager-mern-l1fn.onrender.com/api/tasks",
   {
     title,
     priority,
@@ -93,7 +93,7 @@ function Dashboard() {
   const deleteTask = async (id) => {
     try {
       await axios.delete(
-        `http://localhost:5000/api/tasks/${id}`,
+        `https://taskmanager-mern-l1fn.onrender.com/api/tasks/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -112,7 +112,7 @@ function Dashboard() {
   const markCompleted = async (id) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/tasks/${id}`,
+        `https://taskmanager-mern-l1fn.onrender.com/api/tasks/${id}`,
         {
           status: "completed",
         },
@@ -131,7 +131,7 @@ function Dashboard() {
 const markPending = async (id) => {
   try {
     await axios.put(
-      `http://localhost:5000/api/tasks/${id}`,
+      `https://taskmanager-mern-l1fn.onrender.com/api/tasks/${id}`,
       {
         status: "pending",
       },
@@ -164,7 +164,7 @@ const deleteCompletedTasks = async () => {
 
     for (const task of completedTasks) {
       await axios.delete(
-        `http://localhost:5000/api/tasks/${task._id}`,
+        `https://taskmanager-mern-l1fn.onrender.com/api/tasks/${task._id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
