@@ -1,64 +1,41 @@
-# Task Manager MERN
+# 📋 Task Manager MERN Application
 
-A full-stack Task Management Web Application built using the MERN Stack (MongoDB, Express.js, React.js, and Node.js). This application allows users to securely manage their tasks with authentication, task tracking, filtering, sorting, dashboard analytics, and overdue task monitoring.
+A full-stack Task Management Application built using the MERN Stack (MongoDB, Express.js, React.js, and Node.js). The application helps users manage daily tasks efficiently with authentication, task tracking, filtering, searching, sorting, and dashboard analytics.
 
----
+## 🚀 Live Demo
 
-# Project Description
+### Frontend
 
-Task Manager MERN is designed to help users efficiently organize and manage their daily tasks. Users can create, update, delete, search, filter, and sort tasks while tracking task completion status and deadlines.
+https://task-manager-mern-liard-alpha.vercel.app
 
-The application implements secure user authentication using JWT and follows a RESTful API architecture.
+### Backend API
 
----
-
-# Tech Stack
-
-## Frontend
-
-* React.js
-* React Router DOM
-* Axios
-* React Hot Toast
-* CSS3
-
-## Backend
-
-* Node.js
-* Express.js
-* JWT Authentication
-* bcryptjs
-
-## Database
-
-* MongoDB
-* Mongoose
+https://taskmanager-mern-l1fn.onrender.com
 
 ---
 
-# Features
+## 📌 Features
 
-## Authentication
+### User Authentication
 
 * User Registration
 * User Login
 * JWT Authentication
 * Protected Routes
+* Secure Password Storage
 
-## Task Management
+### Task Management
 
-* Create Task
-* View All Tasks
-* View Single Task
-* Update Task
-* Delete Task
-* Mark Task as Completed
-* Undo Completed Task
-* Delete Completed Tasks
+* Create Tasks
+* View Tasks
+* Update Tasks
+* Delete Tasks
+* Mark Tasks as Completed
+* Mark Tasks as Pending
 
-## Search, Filter & Sort
+### Task Organization
 
-* Search Tasks by Title
+* Search Tasks
 * Filter Tasks
 
   * All Tasks
@@ -68,276 +45,168 @@ The application implements secure user authentication using JWT and follows a RE
 
   * Newest First
   * Oldest First
-  * Priority
-  * Due Date
 
-## Dashboard Statistics
+### Additional Features
 
-* Total Tasks Count
-* Pending Tasks Count
-* Completed Tasks Count
-* Overdue Tasks Count
+* Task Priority Levels
 
-## User Interface
-
-* Responsive Design
-* Toast Notifications
-* Clean Dashboard Layout
-
----
-
-# Folder Structure
-
-```text
-Task Manager MERN
-│
-├── frontend
-│   ├── public
-│   ├── src
-│   ├── package.json
-│   └── ...
-│
-├── backend
-│   ├── controllers
-│   ├── models
-│   ├── routes
-│   ├── middleware
-│   ├── package.json
-│   ├── server.js
-│   └── ...
-│
-└── README.md
-```
-
----
-
-# Setup Instructions
-
-## 1. Clone Repository
-
-```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/task-manager-mern.git
-```
-
-```bash
-cd task-manager-mern
-```
-
----
-
-## 2. Backend Setup
-
-Navigate to backend folder:
-
-```bash
-cd backend
-```
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Create a `.env` file inside the backend folder:
-
-```env
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_secret_key
-```
-
-Start backend server:
-
-```bash
-npm start
-```
-
-Backend runs on:
-
-```text
-http://localhost:5000
-```
-
----
-
-## 3. Frontend Setup
-
-Open a new terminal:
-
-```bash
-cd frontend
-```
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Start frontend:
-
-```bash
-npm start
-```
-
-Frontend runs on:
-
-```text
-http://localhost:3000
-```
-
----
-
-# API Documentation
-
-## Base URL
-
-```text
-http://localhost:5000/api
-```
-
----
-
-## Authentication APIs
-
-### Register User
-
-```http
-POST /api/auth/register
-```
-
-Request Body:
-
-```json
-{
-  "name": "John",
-  "email": "john@example.com",
-  "password": "123456"
-}
-```
-
----
-
-### Login User
-
-```http
-POST /api/auth/login
-```
-
-Request Body:
-
-```json
-{
-  "email": "john@example.com",
-  "password": "123456"
-}
-```
-
----
-
-## Task APIs
-
-### Get All Tasks
-
-```http
-GET /api/tasks
-```
-
-Requires JWT Token.
-
----
-
-### Get Single Task
-
-```http
-GET /api/tasks/:id
-```
-
-Requires JWT Token.
-
----
-
-### Create Task
-
-```http
-POST /api/tasks
-```
-
-Request Body:
-
-```json
-{
-  "title": "Complete Project",
-  "description": "Finish MERN project",
-  "priority": "high",
-  "dueDate": "2026-07-15"
-}
-```
-
-Requires JWT Token.
-
----
-
-### Update Task
-
-```http
-PUT /api/tasks/:id
-```
-
-Requires JWT Token.
-
----
-
-### Delete Task
-
-```http
-DELETE /api/tasks/:id
-```
-
-Requires JWT Token.
-
----
-
-### Delete Completed Tasks
-
-```http
-DELETE /api/tasks/completed/all
-```
-
-Requires JWT Token.
-
----
-
-# Major Project Objectives Achieved
-
-* MERN Stack Development
-* JWT Authentication
-* REST API Development
-* CRUD Operations
-* Protected Routes
-* MongoDB Integration
-* Search Functionality
-* Filtering Functionality
-* Sorting Functionality
-* Dashboard Analytics
+  * Low
+  * Medium
+  * High
+* Due Date Management
+* Dashboard Statistics
+* Overdue Task Tracking
+* Delete All Completed Tasks
 * Responsive User Interface
 
 ---
 
-# Future Enhancements
+## 🛠️ Tech Stack
 
-* Task Categories
-* Dark Mode
-* Task Reminders
-* Email Notifications
-* Calendar Integration
-* User Profile Management
+### Frontend
+
+* React.js
+* React Router DOM
+* Axios
+* CSS
+
+### Backend
+
+* Node.js
+* Express.js
+* JWT Authentication
+* bcryptjs
+
+### Database
+
+* MongoDB Atlas
+* Mongoose
+
+### Deployment
+
+* Frontend: Vercel
+* Backend: Render
 
 ---
 
-# Author
+## 📂 Project Structure
 
-Task Manager MERN
+TaskManager-MERN/
 
-Major Project developed using MongoDB, Express.js, React.js, and Node.js.
+├── frontend/
+
+│ ├── src/
+
+│ ├── public/
+
+│ └── package.json
+
+│
+
+├── backend/
+
+│ ├── controllers/
+
+│ ├── models/
+
+│ ├── routes/
+
+│ ├── middleware/
+
+│ ├── config/
+
+│ └── server.js
+
+│
+
+└── README.md
+
+---
+
+## ⚙️ Installation & Setup
+
+### Clone Repository
+
+```bash
+git clone https://github.com/Coder-Iti/TaskManager-MERN.git
+```
+
+### Backend Setup
+
+```bash
+cd backend
+npm install
+npm start
+```
+
+### Frontend Setup
+
+```bash
+cd frontend
+npm install
+npm start
+```
+
+---
+
+## Environment Variables
+
+Create a .env file inside backend folder:
+
+```env
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+```
+
+---
+
+## API Endpoints
+
+### Authentication
+
+POST /api/auth/register
+
+POST /api/auth/login
+
+### Tasks
+
+GET /api/tasks
+
+POST /api/tasks
+
+PUT /api/tasks/:id
+
+DELETE /api/tasks/:id
+
+---
+
+## Dashboard Statistics
+
+* Total Tasks
+* Completed Tasks
+* Pending Tasks
+* Overdue Tasks
+
+---
+
+## Learning Outcomes
+
+This project helped in understanding:
+
+* MERN Stack Development
+* REST API Development
+* JWT Authentication
+* MongoDB Atlas Integration
+* React State Management
+* Frontend and Backend Deployment
+* Full Stack Project Structure
+
+---
+
+## Author
+
+**Itidarshini**
+
+Major Project Submission
+
+MERN Stack Task Manager Application
